@@ -1,6 +1,8 @@
 # ushort
 url shortener by django
 
+![index](images/index.png)
+
 ### Usage
 I am using python "3.10.6" version 
 
