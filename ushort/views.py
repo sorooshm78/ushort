@@ -14,5 +14,6 @@ class UrlShortListCreateApiView(ListCreateAPIView):
 
 class UrlShortRedirectView(RedirectView):
     def get_redirect_url(self, hash):
-        url_short = get_object_or_404(UrlShort, hash=hash)
-        return url_short.url
+        ushort_object = get_object_or_404(UrlShort, hash=hash)
+        ushort_object.add_visitor()
+        return ushort_object.url

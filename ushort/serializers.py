@@ -14,4 +14,7 @@ class UrlShortModelSerializer(serializers.ModelSerializer):
         fields = [
             "url",
             "short_url",
+            "visitor",
         ]
+
+        read_only_fields = ["visitors"]

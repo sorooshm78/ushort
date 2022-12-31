@@ -9,9 +9,14 @@ from django.dispatch import receiver
 class UrlShort(models.Model):
     url = models.URLField(unique=True)
     hash = models.CharField(max_length=8, unique=True)
+    visitor = models.IntegerField(default=0)
 
     def __str__(self):
         return self.hash
+
+    def add_visitor(self):
+        self.visitor += 1
+        self.save()
 
 
 @receiver(pre_save, sender=UrlShort)
